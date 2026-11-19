@@ -1,0 +1,13 @@
+backend/target/
+frontend/node_modules/
+frontend/dist/
+.npm-cache/
+.idea/
+.vscode/
+*.iml
+*.log
+.env
+.env.*
+application-local.yml
+application-local.yaml
+application-local.properties
