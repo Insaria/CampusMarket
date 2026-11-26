@@ -1,5 +1,25 @@
+app:
+  database:
+    expected-schema: ${DB_SCHEMA:campus_market_dev}
+
 spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 11MB
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+    hikari:
+      connection-init-sql: "SET SESSION time_zone = '+00:00'"
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    edu.bistu.campusmarket.mapper.UserRegistrationMapper: "OFF"
+    edu.bistu.campusmarket.mapper.SellerMapper: "OFF"
+    edu.bistu.campusmarket.mapper.AdminSellerMapper.document: "OFF"
+    edu.bistu.campusmarket.mapper.ProductMessageMapper: "OFF"

@@ -4,6 +4,20 @@ spring:
   profiles:
     default: standalone
 
+app:
+  auth:
+    login-limit:
+      max-failures: 5
+      window: PT5M
+      max-entries: 10000
+
 server:
   address: 127.0.0.1
   port: 8080
+  servlet:
+    session:
+      timeout: 30m
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+        same-site: strict
